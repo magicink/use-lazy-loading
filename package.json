@@ -2,7 +2,13 @@
   "name": "use-lazy-loading",
   "version": "1.0.0",
   "description": "A simple, unopinionated React hook for lazy-loading",
-  "keywords": [],
+  "keywords": [
+    "hook",
+    "hooks",
+    "lazy-load",
+    "lazy-loading",
+    "react"
+  ],
   "homepage": "https://github.com/magicink/use-lazy-loading#readme",
   "bugs": {
     "url": "https://github.com/magicink/use-lazy-loading/issues"
