@@ -1,6 +1,6 @@
 {
   "name": "use-lazy-loading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple, unopinionated React hook for lazy-loading",
   "keywords": [
     "hook",

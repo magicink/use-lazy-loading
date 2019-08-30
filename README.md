@@ -6,8 +6,10 @@ a polyfill to support older browsers.
 
 ### Usage
 ```js
+import { useLazyLoading } from 'use-lazy-loading'
+
 const { lazyLoad } = useLazyLoading(target => {
-    target.setAttribute('src', target.getAttribute('data-src') ?? '')
+    target.setAttribute('src', target.getAttribute('data-src'))
     target.classList.add('loaded')
 })
 React.useEffect(() => {
