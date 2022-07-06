@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 
-export const useLazyLoading = (entryCallback, target = '[data-src]', config = { threshold: 1.0 }) => {
+export const useLazyLoading = (
+  entryCallback,
+  target = '[data-src]',
+  config = { threshold: 1.0 }
+) => {
   const [initialized, setInitialized] = useState(false)
   const [observer, setObserver] = useState()
 
@@ -11,15 +15,18 @@ export const useLazyLoading = (entryCallback, target = '[data-src]', config = { 
   React.useEffect(() => {
     if (!observer) {
       if ('IntersectionObserver' in window) {
-        const intersectionObserver = new IntersectionObserver((entries, self) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const target = entry.target
-              entryCallback && entryCallback(target)
-              self.unobserve(entry.target)
-            }
-          })
-        }, config)
+        const intersectionObserver = new IntersectionObserver(
+          (entries, self) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const target = entry.target
+                entryCallback && entryCallback(target)
+                self.unobserve(entry.target)
+              }
+            })
+          },
+          config
+        )
         setObserver(intersectionObserver)
       }
     }
